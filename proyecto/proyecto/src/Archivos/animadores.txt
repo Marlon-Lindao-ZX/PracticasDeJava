@@ -1,0 +1,12 @@
+Marlon Eddie,Lindao Varas,24,0931504591,Boda
+Richard Bart,Nixon Herrera,27,0459375852,Fiesta_Infantil
+Juan Pablo,Carrillo Cortez,30,0987654321,Integracion
+Valeria Maria,Perez Moreira,21,0124576895,Otros
+Elena Celia,Lucas Solis,23,0946793012,Otros
+Pedro Mariano,Velez Castro,29,0988974589,Boda
+Diego Tomas,Castro Vargas,24,0745359833,Fiesta_Infantil
+Milton Franco,Martinez Vera,20,0967485694,Boda
+Victoria Blanca,Sanchez Minio,25,0911224456,Fiesta_Infantil
+Maria Anabel,Luz Correa,26,0997548811,Otros
+Carlos Ernesto,Torres Pincay,22,1983778574,Integracion
+Sofia Flor,Mera Perez,24,0968454435,Integracion

@@ -1,0 +1,7 @@
+GSF4788;Mazda;Mazda 3;35000;2018;Blanco;-76.0;95.0
+GDS4157;Hyundai;Creta;29000;2018;Rojo;-139.0;147.0
+GSQ1254;Chevrolet;Aveo;18000;2017;Plata;-11.0;47.0
+GSQ2355;Volskwagen;Polo;25000;2018;Azul;-243.0;212.0
+GLX4578;Mazda;Mazda 5;36000;2018;Beige;-21.0;68.0
+GTU7841;Kia;Sportage R;38000;2017;Rojo;-214.0;65.0
+GSF4788;Mazda;Mazda 3;35000;2018;Blanco;-76.0;95.0

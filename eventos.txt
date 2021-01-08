@@ -1,0 +1,8 @@
+0001,luis,Latin Palace,Boda,2018-11-21,15:00,17:00,300,Mark,PENDIENTE
+0002,Alex,Playita del Guasmo,Fiesta_Infantil,2018-12-10,11:00,17:00,300,Mark,PENDIENTE
+0003,Alex,Espol,Boda,2018-11-20,12:00,15:00,100,Mario,PENDIENTE
+0004,Federico,Miami Beach,Integracion,2018-12-13,10:00,15:00,200,Mark,PENDIENTE
+0005,Federico,Romeria Plaza,Fiesta_Infantil,2018-10-12,15:00,20:00,200,Mark,PENDIENTE
+0006,Michel,FairyLanda,Fiesta_Infantil,2018-11-11,10:00,17:00,300,Mark,PENDIENTE
+0007,Michel,FairyLand,Fiesta_Infantil,2018-11-21,10:00,16:00,300,Mark,PENDIENTE
+0008,Michel,FairyLand,Boda,2018-11-22,15:00,20:00,300,Mark,PENDIENTE

@@ -1,0 +1,6 @@
+projectKey=ED-1-1S-2019:DeberArbolBinarioMarlonLindao2
+serverUrl=http://200.9.176.59:9000
+serverVersion=7.7.0.23042
+dashboardUrl=http://200.9.176.59:9000/dashboard?id=ED-1-1S-2019%3ADeberArbolBinarioMarlonLindao2
+ceTaskId=AWw5NACVQKkccASU_tFS
+ceTaskUrl=http://200.9.176.59:9000/api/ce/task?id=AWw5NACVQKkccASU_tFS

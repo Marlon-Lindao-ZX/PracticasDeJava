@@ -1,0 +1,4 @@
+0003,Alex,efectivo,0003
+0008,Michel,Tarjeta de Credito,0897
+0001,luis,Tarjeta de Credito,01897
+0010,Michel,efective,00145

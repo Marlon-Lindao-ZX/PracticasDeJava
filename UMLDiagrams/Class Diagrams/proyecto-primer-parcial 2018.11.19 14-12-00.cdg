@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="proyecto-primer-parcial">
+  <ClassDiagramComponents>
+    <Class name="Agenda" package="Agenda" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="evento" type="Evento" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="ma" type="ManejoDeArchivos" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="linea"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="menuAgenda" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="escribirAgenda" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="linea"/>
+        </Method>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UIAgenda" package="Agenda" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="agendas" type="ArrayList&lt;Agenda&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarAgenda" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;String&gt;" name="lista"/>
+        </Method>
+        <Method name="anadirAgenda" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Agenda" name="agenda"/>
+        </Method>
+        <Method name="getAgendas" returnType="ArrayList&lt;Agenda&gt;" visibility="public" isStatic="true"/>
+        <Method name="setAgendas" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Agenda&gt;" name="agendas"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ManejoDeArchivos" package="Archivos" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="FILE1" type="File" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FILE2" type="File" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FILE3" type="File" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FILE4" type="File" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="FILE5" type="File" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="leerArchivo" returnType="ArrayList&lt;String&gt;" visibility="public">
+          <Argument type="File" name="file"/>
+        </Method>
+        <Method name="escribirArchivo" returnType="void" visibility="public">
+          <Argument type="String" name="linea"/>
+          <Argument type="File" name="file"/>
+        </Method>
+        <Method name="getFILE1" returnType="File" visibility="public" isStatic="true"/>
+        <Method name="getFILE2" returnType="File" visibility="public" isStatic="true"/>
+        <Method name="getFILE3" returnType="File" visibility="public" isStatic="true"/>
+        <Method name="getFILE4" returnType="File" visibility="public" isStatic="true"/>
+        <Method name="getFILE5" returnType="File" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Enum name="Estado" package="Constantes" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Literals>
+        <Literal name="PENDIENTE"/>
+        <Literal name="CONFIRMADO"/>
+      </Literals>
+    </Enum>
+    <Enum name="TipoElementos" package="Constantes" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Literals>
+        <Literal name="MENU"/>
+        <Literal name="BOCADITOS"/>
+        <Literal name="WHISKY"/>
+        <Literal name="VODKA"/>
+        <Literal name="CERVEZA"/>
+        <Literal name="REFRESCOS"/>
+        <Literal name="DJ"/>
+        <Literal name="BANDA"/>
+        <Literal name="FOTOGRAFIA"/>
+        <Literal name="DECORACION"/>
+        <Literal name="ANIMADOR"/>
+      </Literals>
+    </Enum>
+    <Enum name="TipoEvento" package="Constantes" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Literals>
+        <Literal name="Boda"/>
+        <Literal name="Integracion"/>
+        <Literal name="Fiesta_Infantil"/>
+      </Literals>
+    </Enum>
+    <Class name="Animador" package="Elementos" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="cedula" type="String" visibility="private"/>
+        <Field name="evento" type="Evento" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="getCedula" returnType="String" visibility="public"/>
+        <Method name="setCedula" returnType="void" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="getElemento" returnType="Evento" visibility="public"/>
+        <Method name="setElemento" returnType="void" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Elemento" package="Elementos" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="elemento" type="TipoElementos" visibility="private"/>
+        <Field name="evento" type="Evento" visibility="private"/>
+        <Field name="cantidad" type="int" visibility="private"/>
+        <Field name="precioTotal" type="double" visibility="private"/>
+        <Field name="transporte" type="boolean" visibility="private"/>
+        <Field name="tipoVehiculo" type="String" visibility="private"/>
+        <Field name="cantidadPersonasDisfrazadas" type="int" visibility="private"/>
+        <Field name="cantidadSorpresasRepartir" type="int" visibility="private"/>
+        <Field name="adicionJuegosInfantiles" type="boolean" visibility="private"/>
+        <Field name="cantidadPersonasTransportar" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="TipoElementos" name="elemento"/>
+          <Argument type="int" name="cantidad"/>
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="TipoElementos" name="elemento"/>
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Boda" name="boda"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="FiestaInfantil" name="fiestaInfantil"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integracion" name="integracion"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="linea"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="obtenerTipoDeElemento" returnType="TipoElementos" visibility="public" isStatic="true">
+          <Argument type="String" name="tipo"/>
+        </Method>
+        <Method name="pasarLineaElementoAdicional" returnType="String" visibility="public"/>
+        <Method name="pasarLineaElementoBoda" returnType="String" visibility="public"/>
+        <Method name="pasarLineaElementoFiestaInfantil" returnType="String" visibility="public"/>
+        <Method name="pasarLineaElementoIntegracion" returnType="String" visibility="public"/>
+        <Method name="getElemento" returnType="TipoElementos" visibility="public"/>
+        <Method name="setElemento" returnType="void" visibility="public">
+          <Argument type="TipoElementos" name="elemento"/>
+        </Method>
+        <Method name="getCantidad" returnType="int" visibility="public"/>
+        <Method name="setCantidad" returnType="void" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="getEvento" returnType="Evento" visibility="public"/>
+        <Method name="setEvento" returnType="void" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="getPrecioTotal" returnType="double" visibility="public"/>
+        <Method name="setPrecioTotal" returnType="void" visibility="public">
+          <Argument type="double" name="precioTotal"/>
+        </Method>
+        <Method name="isTransporte" returnType="boolean" visibility="public"/>
+        <Method name="setTransporte" returnType="void" visibility="public">
+          <Argument type="boolean" name="transporte"/>
+        </Method>
+        <Method name="getTipoVehiculo" returnType="String" visibility="public"/>
+        <Method name="setTipoVehiculo" returnType="void" visibility="public">
+          <Argument type="String" name="tipoVehiculo"/>
+        </Method>
+        <Method name="getCantidadPersonasDisfrazadas" returnType="int" visibility="public"/>
+        <Method name="setCantidadPersonasDisfrazadas" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadPersonasDisfrazadas"/>
+        </Method>
+        <Method name="getCantidadSorpresasRepartir" returnType="int" visibility="public"/>
+        <Method name="setCantidadSorpresasRepartir" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadSorpresasRepartir"/>
+        </Method>
+        <Method name="isAdicionJuegosInfantiles" returnType="boolean" visibility="public"/>
+        <Method name="setAdicionJuegosInfantiles" returnType="void" visibility="public">
+          <Argument type="boolean" name="adicionJuegosInfantiles"/>
+        </Method>
+        <Method name="getCantidadPersonasTransportar" returnType="int" visibility="public"/>
+        <Method name="setCantidadPersonasTransportar" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadPersonasTransportar"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UIElemento" package="Elementos" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="private" isStatic="true"/>
+        <Field name="write" type="ManejoDeArchivos" visibility="private" isStatic="true"/>
+        <Field name="option" type="UIElementoMenu" visibility="private"/>
+        <Field name="elementos" type="ArrayList&lt;Elemento&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearElemento" returnType="ArrayList&lt;Elemento&gt;" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="verificarElemento" returnType="boolean" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="TipoElementos" name="tipo"/>
+        </Method>
+        <Method name="verificarElemento" returnType="boolean" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos1"/>
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos2"/>
+          <Argument type="TipoElementos" name="tipo"/>
+        </Method>
+        <Method name="agregarElementosOtraLista" returnType="ArrayList&lt;Elemento&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="lista1"/>
+          <Argument type="ArrayList&lt;Elemento&gt;" name="lista2"/>
+        </Method>
+        <Method name="agregarElementosOtraLista" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="lista"/>
+        </Method>
+        <Method name="agregarElementoALista" returnType="void" visibility="public">
+          <Argument type="Elemento" name="elemento"/>
+        </Method>
+        <Method name="escribirElemento" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="linea"/>
+        </Method>
+        <Method name="cargarElementos" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;String&gt;" name="lista"/>
+        </Method>
+        <Method name="getElementos" returnType="ArrayList&lt;Elemento&gt;" visibility="public" isStatic="true"/>
+        <Method name="setElementos" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UIElementoMenu" package="Elementos" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="read" type="Scanner" visibility="private"/>
+        <Field name="test" type="UIElemento" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="menuComida" returnType="ArrayList&lt;Elemento&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="menuMusica" returnType="ArrayList&lt;Elemento&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="menuFotografias" returnType="Elemento" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="menuDecoracion" returnType="Elemento" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="menuBebida" returnType="ArrayList&lt;Elemento&gt;" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="menuAnimador" returnType="Elemento" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="Evento" name="evento"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Boda" package="Eventos" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="tipoVehiculo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="TipoEvento" name="tipo"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="String" name="lugar"/>
+          <Argument type="LocalDate" name="fecha"/>
+          <Argument type="LocalTime" name="horaInicio"/>
+          <Argument type="LocalTime" name="horaFin"/>
+          <Argument type="int" name="capacidad"/>
+          <Argument type="Planificador" name="planificador"/>
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="String" name="tipoVehiculo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+          <Argument type="String" name="tipoVehiculo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="confirmar" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="setAtributos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="lista"/>
+        </Method>
+        <Method name="getTipoVehiculo" returnType="String" visibility="public"/>
+        <Method name="setTipoVehiculo" returnType="void" visibility="public">
+          <Argument type="String" name="tipoVehiculo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Confirmable" package="Eventos" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Methods>
+        <Method name="confirmar" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="Evento" package="Eventos" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="codigo" type="int" visibility="private" isStatic="true"/>
+        <Field name="codigoEvento" type="String" visibility="protected"/>
+        <Field name="tipo" type="TipoEvento" visibility="protected"/>
+        <Field name="agenda" type="Agenda" visibility="protected"/>
+        <Field name="lugar" type="String" visibility="protected"/>
+        <Field name="fecha" type="LocalDate" visibility="protected"/>
+        <Field name="horaInicio" type="LocalTime" visibility="protected"/>
+        <Field name="horaFin" type="LocalTime" visibility="protected"/>
+        <Field name="capacidad" type="int" visibility="protected"/>
+        <Field name="planificador" type="Planificador" visibility="protected"/>
+        <Field name="cliente" type="Cliente" visibility="protected"/>
+        <Field name="estado" type="Estado" visibility="protected"/>
+        <Field name="elementos" type="ArrayList&lt;Elemento&gt;" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="TipoEvento" name="tipo"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="String" name="lugar"/>
+          <Argument type="LocalDate" name="fecha"/>
+          <Argument type="LocalTime" name="horaInicio"/>
+          <Argument type="LocalTime" name="horaFin"/>
+          <Argument type="int" name="capacidad"/>
+          <Argument type="Planificador" name="planificador"/>
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="TipoEvento" name="tipo"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="String" name="lugar"/>
+          <Argument type="LocalDate" name="fecha"/>
+          <Argument type="LocalTime" name="horaInicio"/>
+          <Argument type="LocalTime" name="horaFin"/>
+          <Argument type="int" name="capacidad"/>
+          <Argument type="Planificador" name="planificador"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="linea"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obtainCode" returnType="String" visibility="private"/>
+        <Method name="confirmar" returnType="void" visibility="public"/>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="Evento" name="e"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="presentarAtributosComparacion" returnType="String" visibility="public"/>
+        <Method name="presentarAtributos" returnType="String" visibility="public"/>
+        <Method name="obtenerDuracion" returnType="int" visibility="public"/>
+        <Method name="presentarElementos" returnType="String" visibility="public"/>
+        <Method name="verificarElementos" returnType="boolean" visibility="public">
+          <Argument type="TipoElementos" name="tipos"/>
+        </Method>
+        <Method name="obtenerStringElementos" returnType="String" visibility="public">
+          <Argument type="TipoElementos" name="tipos"/>
+        </Method>
+        <Method name="pasarLinea" returnType="String" visibility="public"/>
+        <Method name="getCodigoEvento" returnType="String" visibility="public"/>
+        <Method name="setCodigoEvento" returnType="void" visibility="public">
+          <Argument type="String" name="codigoEvento"/>
+        </Method>
+        <Method name="getTipo" returnType="TipoEvento" visibility="public"/>
+        <Method name="setTipo" returnType="void" visibility="public">
+          <Argument type="TipoEvento" name="tipo"/>
+        </Method>
+        <Method name="getAgenda" returnType="Agenda" visibility="public"/>
+        <Method name="setAgenda" returnType="void" visibility="public">
+          <Argument type="Agenda" name="agenda"/>
+        </Method>
+        <Method name="getElementos" returnType="ArrayList&lt;Elemento&gt;" visibility="public"/>
+        <Method name="setElementos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+        </Method>
+        <Method name="getLugar" returnType="String" visibility="public"/>
+        <Method name="setLugar" returnType="void" visibility="public">
+          <Argument type="String" name="lugar"/>
+        </Method>
+        <Method name="getFecha" returnType="LocalDate" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="LocalDate" name="fecha"/>
+        </Method>
+        <Method name="getHoraInicio" returnType="LocalTime" visibility="public"/>
+        <Method name="setHoraInicio" returnType="void" visibility="public">
+          <Argument type="LocalTime" name="horaInicio"/>
+        </Method>
+        <Method name="getHoraFin" returnType="LocalTime" visibility="public"/>
+        <Method name="setHoraFin" returnType="void" visibility="public">
+          <Argument type="LocalTime" name="horaFin"/>
+        </Method>
+        <Method name="getCapacidad" returnType="int" visibility="public"/>
+        <Method name="setCapacidad" returnType="void" visibility="public">
+          <Argument type="int" name="capacidad"/>
+        </Method>
+        <Method name="getPlanificador" returnType="Planificador" visibility="public"/>
+        <Method name="setPlanificador" returnType="void" visibility="public">
+          <Argument type="Planificador" name="planificador"/>
+        </Method>
+        <Method name="getCliente" returnType="Cliente" visibility="public"/>
+        <Method name="setCliente" returnType="void" visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="getEstado" returnType="Estado" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="Estado" name="estado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FiestaInfantil" package="Eventos" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="cantidadPersonasDisfrazadas" type="int" visibility="private"/>
+        <Field name="cantidadSorpresasRepartir" type="int" visibility="private"/>
+        <Field name="adicionJuegosInfantiles" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="TipoEvento" name="tipo"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="String" name="lugar"/>
+          <Argument type="LocalDate" name="fecha"/>
+          <Argument type="LocalTime" name="horaInicio"/>
+          <Argument type="LocalTime" name="horaFin"/>
+          <Argument type="int" name="capacidad"/>
+          <Argument type="Planificador" name="planificador"/>
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="int" name="cantidadPersonasDisfrazadas"/>
+          <Argument type="int" name="cantidadSorpresasRepartir"/>
+          <Argument type="boolean" name="adicionJuegosInfantiles"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+          <Argument type="int" name="cantidadPersonasDisfrazadas"/>
+          <Argument type="int" name="cantidadSorpresasRepartir"/>
+          <Argument type="boolean" name="adicionJuegosInfantiles"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setAtributos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="lista"/>
+        </Method>
+        <Method name="confirmar" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getCantidadPersonasDisfrazadas" returnType="int" visibility="public"/>
+        <Method name="setCantidadPersonasDisfrazadas" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadPersonasDisfrazadas"/>
+        </Method>
+        <Method name="getCantidadSorpresasRepartir" returnType="int" visibility="public"/>
+        <Method name="setCantidadSorpresasRepartir" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadSorpresasRepartir"/>
+        </Method>
+        <Method name="isAdicionJuegosInfantiles" returnType="boolean" visibility="public"/>
+        <Method name="setAdicionJuegosInfantiles" returnType="void" visibility="public">
+          <Argument type="boolean" name="adicionJuegosInfantiles"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Integracion" package="Eventos" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields>
+        <Field name="transporte" type="boolean" visibility="private"/>
+        <Field name="cantidadPersonasTransportar" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="TipoEvento" name="tipo"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="String" name="lugar"/>
+          <Argument type="LocalDate" name="fecha"/>
+          <Argument type="LocalTime" name="horaInicio"/>
+          <Argument type="LocalTime" name="horaFin"/>
+          <Argument type="int" name="capacidad"/>
+          <Argument type="Planificador" name="planificador"/>
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elementos"/>
+          <Argument type="boolean" name="transporte"/>
+          <Argument type="int" name="cantidadPersonasTransportar"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+          <Argument type="boolean" name="transporte"/>
+          <Argument type="int" name="cantidadPersonasTransportar"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setAtributos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="lista"/>
+        </Method>
+        <Method name="confirmar" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="isTransporte" returnType="boolean" visibility="public"/>
+        <Method name="setTransporte" returnType="void" visibility="public">
+          <Argument type="boolean" name="transporte"/>
+        </Method>
+        <Method name="getCantidadPersonasTransportar" returnType="int" visibility="public"/>
+        <Method name="setCantidadPersonasTransportar" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadPersonasTransportar"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UIEventoMenu" package="Eventos" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="sc" type="Scanner" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="menuBoda" returnType="Evento" visibility="public" isStatic="true">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="menuFiestaInfantil" returnType="Evento" visibility="public" isStatic="true">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="menuIntegracion" returnType="Evento" visibility="public" isStatic="true">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UIEventos" package="Eventos" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="eventos" type="ArrayList&lt;Evento&gt;" visibility="private" isStatic="true"/>
+        <Field name="sc" type="Scanner" visibility="private" isStatic="true"/>
+        <Field name="uie" type="UIElemento" visibility="private" isStatic="true"/>
+        <Field name="writer" type="ManejoDeArchivos" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="crearEvento" returnType="void" visibility="public">
+          <Argument type="Planificador" name="planificador"/>
+        </Method>
+        <Method name="obtenerEvento" returnType="Evento" visibility="public" isStatic="true">
+          <Argument type="String" name="codigoEvento"/>
+        </Method>
+        <Method name="confirmarEvento" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="presentarEvento" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="anadirEvento" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="presentarEventoOrdenado" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="presentarEventoOrdenadoPorTipo" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="menuOrdenacion" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="escribirEvento" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="cargaEventos" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;String&gt;" name="lista"/>
+        </Method>
+        <Method name="asignacionElementosAEventos" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Elemento&gt;" name="elements"/>
+        </Method>
+        <Method name="stringToLocalDate" returnType="LocalDate" visibility="public" isStatic="true">
+          <Argument type="String" name="date"/>
+        </Method>
+        <Method name="verificarEstado" returnType="Evento" visibility="public" isStatic="true">
+          <Argument type="String" name="codigoEvento"/>
+        </Method>
+        <Method name="compare" returnType="int" visibility="public">
+          <Argument type="Evento" name="evento1"/>
+          <Argument type="Evento" name="evento2"/>
+        </Method>
+        <Method name="getEventos" returnType="ArrayList&lt;Evento&gt;" visibility="public" isStatic="true"/>
+        <Method name="setEventos" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Evento&gt;" name="eventos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Sistema" package="SistemaProeventos" visibility="public" xPosition="320.0" yPosition="820.0">
+      <Fields>
+        <Field name="ui" type="UISistema" visibility="package" isStatic="true"/>
+        <Field name="controlLogin" type="boolean" visibility="package" isStatic="true"/>
+        <Field name="sc" type="Scanner" visibility="package" isStatic="true"/>
+        <Field name="aplication" type="UIEventos" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="menuAdminnistrador" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="menuPlanificador" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="menuCliente" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UISistema" package="SistemaProeventos" visibility="public" xPosition="620.0" yPosition="820.0">
+      <Fields>
+        <Field name="lu" type="UIUsuario" visibility="private"/>
+        <Field name="ma" type="ManejoDeArchivos" visibility="private"/>
+        <Field name="user" type="String" visibility="private"/>
+        <Field name="sc" type="Scanner" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargaArchivos" returnType="void" visibility="public"/>
+        <Method name="login" returnType="boolean" visibility="public"/>
+        <Method name="obtenerPerfil" returnType="char" visibility="public"/>
+        <Method name="obtainUser" returnType="Usuario" visibility="public"/>
+        <Method name="registrarUsuario" returnType="void" visibility="public"/>
+        <Method name="getUser" returnType="String" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pago" package="Transacciones" visibility="public" xPosition="920.0" yPosition="820.0">
+      <Fields>
+        <Field name="evento" type="Evento" visibility="private"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="metodoPago" type="String" visibility="private"/>
+        <Field name="codigoTransaccion" type="String" visibility="private"/>
+        <Field name="ma" type="ManejoDeArchivos" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Evento" name="evento"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="String" name="metodoPago"/>
+          <Argument type="String" name="codigoTransaccion"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="linea"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="menuTransaccion" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="escribirPago" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="linea"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getEvento" returnType="Evento" visibility="public"/>
+        <Method name="setEvento" returnType="void" visibility="public">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="getCodigoTransaccion" returnType="String" visibility="public"/>
+        <Method name="setCodigoTransaccion" returnType="void" visibility="public">
+          <Argument type="String" name="codigoTransaccion"/>
+        </Method>
+        <Method name="getCliente" returnType="Cliente" visibility="public"/>
+        <Method name="setCliente" returnType="void" visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="getMetodoPago" returnType="String" visibility="public"/>
+        <Method name="setMetodopoago" returnType="void" visibility="public">
+          <Argument type="String" name="metodoPago"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UIPago" package="Transacciones" visibility="public" xPosition="1220.0" yPosition="820.0">
+      <Fields>
+        <Field name="transacciones" type="ArrayList&lt;Pago&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarTransacciones" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;String&gt;" name="lista"/>
+        </Method>
+        <Method name="verificarPago" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Evento" name="evento"/>
+        </Method>
+        <Method name="anadirPago" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Pago" name="pago"/>
+        </Method>
+        <Method name="getTransacciones" returnType="ArrayList&lt;Pago&gt;" visibility="public" isStatic="true"/>
+        <Method name="setTransacciones" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Pago&gt;" name="transacciones"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="Usuarios" visibility="public" xPosition="1520.0" yPosition="820.0">
+      <Fields>
+        <Field name="nombrePlanificador" type="String" visibility="private"/>
+        <Field name="eventos" type="ArrayList&lt;Evento&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contraseﾃｱa"/>
+          <Argument type="char" name="perfil"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Usuario" name="u"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="linea"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombrePlanificador" returnType="String" visibility="public"/>
+        <Method name="setNombrePlanificador" returnType="void" visibility="public">
+          <Argument type="String" name="nombrePlanificador"/>
+        </Method>
+        <Method name="getEventos" returnType="ArrayList&lt;Evento&gt;" visibility="public"/>
+        <Method name="setEventos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Evento&gt;" name="eventos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Planificador" package="Usuarios" visibility="public" xPosition="1820.0" yPosition="820.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contraseﾃｱa"/>
+          <Argument type="char" name="perfil"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Usuario" name="u"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="linea"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="UIUsuario" package="Usuarios" visibility="public" xPosition="2120.0" yPosition="820.0">
+      <Fields>
+        <Field name="sc" type="Scanner" visibility="private" isStatic="true"/>
+        <Field name="usuarios" type="ArrayList&lt;Usuario&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="crearUsuario" returnType="Usuario" visibility="public" isStatic="true"/>
+        <Method name="cargarListaUsuario" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;String&gt;" name="lineas"/>
+        </Method>
+        <Method name="buscarPlanificador" returnType="Planificador" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="buscarCliente" returnType="Cliente" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="aﾃｱadirUsuario" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="getUsuarios" returnType="ArrayList&lt;Usuario&gt;" visibility="public" isStatic="true"/>
+        <Method name="setUsuarios" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Usuario&gt;" name="usuarios"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="Usuarios" visibility="public" xPosition="20.0" yPosition="1220.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="apellido" type="String" visibility="protected"/>
+        <Field name="usuario" type="String" visibility="protected"/>
+        <Field name="clave" type="String" visibility="protected"/>
+        <Field name="perfil" type="char" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Usuario" name="u"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="linea"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="clave"/>
+          <Argument type="char" name="perfil"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="pasarLinea" returnType="String" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="getClave" returnType="String" visibility="public"/>
+        <Method name="setClave" returnType="void" visibility="public">
+          <Argument type="String" name="clave"/>
+        </Method>
+        <Method name="getPerfil" returnType="char" visibility="public"/>
+        <Method name="setPerfil" returnType="void" visibility="public">
+          <Argument type="char" name="perfil"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="planificador" source="Eventos.Evento" target="Usuarios.Planificador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuarios" source="Usuarios.UIUsuario" target="Usuarios.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Usuario&gt;"/>
+    <UseRelation source="Eventos.Boda" target="Elementos.Elemento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="elementos" source="Elementos.UIElemento" target="Elementos.Elemento" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Elemento&gt;"/>
+    <UseRelation source="Elementos.UIElementoMenu" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Usuarios.UIUsuario" target="Usuarios.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="eventos" source="Usuarios.Cliente" target="Eventos.Evento" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Evento&gt;"/>
+    <UseRelation source="Elementos.Elemento" target="Elementos.Elemento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Elementos.UIElemento" target="Elementos.Elemento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="test" source="Elementos.UIElementoMenu" target="Elementos.UIElemento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="agenda" source="Eventos.Evento" target="Agenda.Agenda" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ma" source="Agenda.Agenda" target="Archivos.ManejoDeArchivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.Evento" target="Agenda.Agenda" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.Evento" target="Elementos.Elemento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="estado" source="Eventos.Evento" target="Constantes.Estado" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.Evento" target="Usuarios.Planificador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.UIEventoMenu" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ma" source="Transacciones.Pago" target="Archivos.ManejoDeArchivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Usuarios.Cliente" target="Usuarios.Usuario"/>
+    <UseRelation source="Transacciones.Pago" target="Usuarios.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="eventos" source="Eventos.UIEventos" target="Eventos.Evento" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Evento&gt;"/>
+    <UseRelation source="Usuarios.UIUsuario" target="Usuarios.Planificador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.Integracion" target="Elementos.Elemento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Usuarios.Planificador" target="Usuarios.Usuario"/>
+    <UseRelation source="Eventos.Evento" target="Usuarios.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Eventos.FiestaInfantil" target="Eventos.Evento"/>
+    <HasRelation name="uie" source="Eventos.UIEventos" target="Elementos.UIElemento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="elementos" source="Eventos.Evento" target="Elementos.Elemento" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Elemento&gt;"/>
+    <HasRelation name="aplication" source="SistemaProeventos.Sistema" target="Eventos.UIEventos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Elementos.Animador" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="evento" source="Elementos.Elemento" target="Eventos.Evento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Eventos.Boda" target="Eventos.Evento"/>
+    <UseRelation source="Usuarios.UIUsuario" target="Usuarios.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Elementos.Elemento" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Transacciones.Pago" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.UIEventos" target="Usuarios.Planificador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.Evento" target="Constantes.Estado" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Eventos.Evento" target="Eventos.Confirmable"/>
+    <UseRelation source="Transacciones.UIPago" target="Transacciones.Pago" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="evento" source="Agenda.Agenda" target="Eventos.Evento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="lu" source="SistemaProeventos.UISistema" target="Usuarios.UIUsuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="agendas" source="Agenda.UIAgenda" target="Agenda.Agenda" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Agenda&gt;"/>
+    <UseRelation source="Eventos.UIEventos" target="Elementos.Elemento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="elemento" source="Elementos.Elemento" target="Constantes.TipoElementos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="SistemaProeventos.Sistema" target="Usuarios.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="SistemaProeventos.UISistema" target="Usuarios.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Transacciones.UIPago" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="write" source="Elementos.UIElemento" target="Archivos.ManejoDeArchivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="evento" source="Transacciones.Pago" target="Eventos.Evento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.Evento" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.UIEventos" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tipo" source="Eventos.Evento" target="Constantes.TipoEvento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.UIEventos" target="Usuarios.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="Eventos.Evento" target="Usuarios.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="Transacciones.Pago" target="Usuarios.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Eventos.Integracion" target="Eventos.Evento"/>
+    <UseRelation source="Usuarios.Cliente" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="writer" source="Eventos.UIEventos" target="Archivos.ManejoDeArchivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ui" source="SistemaProeventos.Sistema" target="SistemaProeventos.UISistema" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Agenda.UIAgenda" target="Agenda.Agenda" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="evento" source="Elementos.Animador" target="Eventos.Evento" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="transacciones" source="Transacciones.UIPago" target="Transacciones.Pago" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Pago&gt;"/>
+    <HasRelation name="option" source="Elementos.UIElemento" target="Elementos.UIElementoMenu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Eventos.FiestaInfantil" target="Elementos.Elemento" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ma" source="SistemaProeventos.UISistema" target="Archivos.ManejoDeArchivos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Elementos.UIElemento" target="Eventos.Evento" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

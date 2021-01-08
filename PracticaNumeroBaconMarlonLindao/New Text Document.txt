@@ -1,0 +1,25 @@
+public List<List<E>> connectedComponents1(){
+        cleanVertex();
+        List<List<E>> result = new LinkedList<>();
+        if(!this.vertexes.isEmpty()){
+            Vertex<E> v = getNotVisited();
+            GraphLA<E> reverse = reverse();
+            List<E> vertexes1;
+            List<E> vertexes2;
+            HashSet<E> intersection = new HashSet<>();
+            
+            while(v != null){
+                List<E> temp = new LinkedList<>();
+                vertexes1 = bfs(v.getData());
+                vertexes2 = reverse.bfs(v.getData());
+                intersection.addAll(vertexes1);
+                intersection.retainAll(vertexes2);
+                temp.addAll(intersection);
+                if(temp.size()>1)
+                    result.add(temp);
+                v = getNotVisited();
+                intersection.clear();
+            }
+        }
+        return result;
+    }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniproyecto.FXMLAvlController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: f7c6fa;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="addButton" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#addAction" style="-: 7AC5ED;" text="Add:" />
+            <TextField fx:id="addTF" layoutX="81.0" layoutY="7.0" />
+            <Button fx:id="removeButton" layoutX="289.0" layoutY="7.0" mnemonicParsing="false" onAction="#removeAction" text="Remove:" />
+            <TextField fx:id="removeTF" layoutX="382.0" layoutY="7.0" />
+            <Button fx:id="searchButton" layoutX="584.0" layoutY="7.0" mnemonicParsing="false" onAction="#searchAction" text="Search:" />
+            <TextField fx:id="searchTF" layoutX="667.0" layoutY="7.0" />
+            <Button fx:id="allButton" layoutX="869.0" layoutY="7.0" mnemonicParsing="false" onAction="#removeAllAction" text="Remove All" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <Pane fx:id="lienzo" prefHeight="876.0" prefWidth="1140.0" style="-: ;" />
+         </content>
+      </ScrollPane>
+   </center>
+   <right>
+      <VBox prefHeight="955.0" prefWidth="264.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="36.0" prefWidth="267.0" style="-: ;" text="BUSQUEDA" textAlignment="CENTER">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <VBox fx:id="toSearch" prefHeight="915.0" prefWidth="264.0" style="-fx-background-color: f7c6fa;" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
